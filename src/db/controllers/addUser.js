@@ -1,7 +1,11 @@
 const User = require('../models/userModel');
 
+
 async function addUser(req,res) {
     try {
+
+        console.log("Hashed password to be saved:", req.body.password);
+        
      const output = await User.create({
             username: req.body.username,
             email: req.body.email,
